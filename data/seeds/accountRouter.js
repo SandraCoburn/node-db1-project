@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
   //Get list of accounts
   db.select("*")
     .from("accounts")
+    .orderBy("budget")
     .then(accounts => {
       res.status(200).json(accounts);
     })
